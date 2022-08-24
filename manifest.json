@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Ethos Codeforces",
+  "version": "1.0.0",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/problemset/problem/*"],
+      "js": [
+        "ace.js",
+        "mode-c_cpp.js",
+        "theme-xcode.js",
+        "content.js",
+        "cd-1.js"
+      ],
+      "cpp": ["my_code.cpp"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs"]
+}
